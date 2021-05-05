@@ -33,12 +33,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view)
             {
                 user.setFollowed(!user.isFollowed());
-                String text = user.isFollowed() ? "Unfollow" : "Follow";
-                followBtn.setText(text);
+                followBtn.setText(user.isFollowed() ? "Unfollow" : "Follow");
 
                 int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(MainActivity.this, text + "ed", duration);
+                Toast toast = Toast.makeText(
+                        MainActivity.this,
+                        !user.isFollowed() ? "Unfollowed" : "Followed",
+                        duration
+                );
                 toast.show();
             }
         });
