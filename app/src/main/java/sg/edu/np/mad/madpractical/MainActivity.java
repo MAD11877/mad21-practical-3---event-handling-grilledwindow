@@ -20,10 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Log.v(TAG, "Main Activity Created");
 
         TextView title = findViewById(R.id.title);
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            title.setText("MAD " + extras.getInt("rng"));
-        }
+        title.setText("MAD " + getIntent().getIntExtra("rng", 0));
         User user = new User(false);
 
         Button followBtn = findViewById(R.id.follow_btn);
